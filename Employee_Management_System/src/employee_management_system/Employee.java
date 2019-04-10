@@ -10,38 +10,33 @@ package employee_management_system;
  * @author nanon
  */
 public class Employee {
-     protected int ID;
+  
     protected String FirstName;
     protected String SurName;
     protected String Gender;
     protected String Email;
-    protected String DOB;
     protected int Age;
     protected String Password;
-    protected double Salary;
+    protected float Salary;
   
 
     public Employee() {
     }
 
  
-    public Employee(int ID, String FirstName, String SurName, String Gender, String Email, int Age, double Salary, String Password,String DOB) {
-        this.ID = ID;
+    public Employee( String FirstName, String SurName, String Gender, String Email, int Age, String Password) {
+      
         this.FirstName = FirstName;
         this.SurName = SurName;
         this.Gender = Gender;
         this.Email = Email;
         this.Age = Age;
-        this.Salary = Salary;
         this.Password=Password;
-        this.DOB=DOB;
+       
     }
 
     
-    public int getID() {
-        return ID;
-    }
-
+   
     public String getFirstName() {
         return FirstName;
     }
@@ -72,9 +67,7 @@ public class Employee {
         return Salary;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
+    
 
     public void setFirstName(String FirstName) {
         this.FirstName = FirstName;
@@ -102,7 +95,7 @@ public class Employee {
         this.Password = Password;
     }
 
-    public void setSalary(double Salary) {
+    public void setSalary(float Salary) {
         this.Salary = Salary;
     }
 

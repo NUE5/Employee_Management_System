@@ -12,15 +12,16 @@ package employee_management_system;
 public class Engineer extends Employee{
     
     private int WorkingHors;
-    private String Grade;
-    private double taxRate;
-    private double payRate;
-   
+    private String position;
+    private float taxRate;
+    private float payRate;
 
-    public Engineer(int ID, String FirstName, String SurName, String Gender, String Email, int Age, double Salary, String Password, String DOB,int WorkingHours,String Grade) {
-        super(ID, FirstName, SurName, Gender, Email, Age, Salary, Password, DOB);
+
+    public Engineer( String FirstName, String SurName, String Gender, String Email, int Age, String Password, int WorkingHours,String role) {
+        super( FirstName, SurName, Gender, Email, Age,  Password);
         this.WorkingHors=WorkingHours;
-        this.Grade=Grade;
+        this.position=position;
+
     }
 
     public int getWorkingHors() {
@@ -31,42 +32,6 @@ public class Engineer extends Employee{
         this.WorkingHors = WorkingHors;
     }
 
-    public String getGrade() {
-        return Grade;
-    }
-
-    public void setGrade(String Grade) {
-        this.Grade = Grade;
-    }
-
-    
-    public void SetSalary(String Grade,int WorkingHours)
-    {
-        switch(Grade)
-        {
-            case "Manager":
-                    {
-                       taxRate=0.1;
-                       payRate=20;
-                       Salary=payRate*WorkingHours-(payRate*WorkingHours*taxRate);
-                        break;
-                    }
-                     case "Team leader":
-                    {
-                       taxRate=0.1;
-                       payRate=20;
-                       Salary=payRate*WorkingHours-(payRate*WorkingHours*taxRate);
-                        break;
-                    }
-                     case "Team member":
-                    {
-                       taxRate=0.1;
-                       payRate=20;
-                       Salary=payRate*WorkingHours-(payRate*WorkingHours*taxRate);
-                        break;
-                    }
-        }
-    }
     
 }
 

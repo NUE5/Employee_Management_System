@@ -14,12 +14,12 @@ public class Trainee extends Employee{
     private String University;
     private int AcademicYear;
 
-    public Trainee(double GPA, String University, int AcademicYear, int ID, String FirstName, String SurName, String Gender, String Email, int Age, double Salary, String Password, String DOB) {
-        super(ID, FirstName, SurName, Gender, Email, Age, Salary, Password, DOB);
+    public Trainee(double GPA, String University, int AcademicYear, int ID, String FirstName, String SurName, String Gender, String Email, int Age,  String Password, String DOB) {
+        super( FirstName, SurName, Gender, Email, Age,  Password);
         this.GPA = GPA;
         this.University = University;
         this.AcademicYear = AcademicYear;
-        Salary=1000.0;
+        Salary=1000.0f;
     }
 
     public double getGPA() {
@@ -50,9 +50,6 @@ public class Trainee extends Employee{
         return Salary;
     }
 
-    public void setSalary(double Salary) {
-        this.Salary = Salary;
-    }
-    
+  
     
 }

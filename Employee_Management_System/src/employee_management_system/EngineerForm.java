@@ -5,6 +5,14 @@
  */
 package employee_management_system;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nanon
@@ -16,8 +24,33 @@ public class EngineerForm extends javax.swing.JFrame {
      */
     public EngineerForm() {
         initComponents();
+        
     }
-
+     ArrayList<Engineer>engineers=new ArrayList<Engineer>();
+     
+     public void showEngineer(String username , String password)
+     {
+           try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String url="jdbc:sqlserver://localhost:1433;databaseName=employee_system;integratedSecurity=true";
+            Connection con = DriverManager.getConnection(url);
+            String sql = "Select * from engineer where email=? and password = ?";
+          
+            PreparedStatement pst1 = con.prepareStatement(sql);
+            pst1.setString(1, username);
+            pst1.setString(2, password);
+            ResultSet rs=pst1.executeQuery();
+          
+          while(rs.next())
+          {
+                fname.setText(rs.getString("fname"));
+          }
+           }
+           catch(Exception e)
+           {
+               JOptionPane.showMessageDialog(null,e.getMessage());
+           }
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,17 +60,25 @@ public class EngineerForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fname = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 515, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         pack();
@@ -79,5 +120,6 @@ public class EngineerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField fname;
     // End of variables declaration//GEN-END:variables
 }

@@ -123,40 +123,56 @@ public class Login extends javax.swing.JFrame {
             pst1.setString(2, password.getText());
             ResultSet rs1 = pst1.executeQuery();
             
-//            String sql2 = "Select * from engineeer where name=? and password = ?";
-//            PreparedStatement pst2 = con.prepareStatement(sql2);
-//            pst1.setString(1, username.getText());
-//            pst1.setString(2, password.getText());
-//            ResultSet rs2 = pst2.executeQuery();
-//            
-//            String sql3 = "Select * from trainee where name=? and password = ?";
-//            PreparedStatement pst3 = con.prepareStatement(sql3);
-//            pst3.setString(1, username.getText());
-//            pst3.setString(2, password.getText());
-//            ResultSet rs3 = pst3.executeQuery();
+            String sql2 = "Select * from engineer where email=? and password = ?";
+            PreparedStatement pst2 = con.prepareStatement(sql2);
+            pst2.setString(1, username.getText());
+            pst2.setString(2, password.getText());
+            ResultSet rs2 = pst2.executeQuery();
+            
+            
+          String sql3 = "Select * from trainee where email=? and password = ?";
+            PreparedStatement pst3 = con.prepareStatement(sql3);
+            pst3.setString(1, username.getText());
+            pst3.setString(2, password.getText());
+            ResultSet rs3 = pst3.executeQuery();
+            
+            while(  rs3.next()){
+            String user1=rs3.getString("email");
+        String password1=rs3.getString("password");
+                    if((user1.equals(username))&&(password1.equals(password))){
+                    JOptionPane.showMessageDialog(null, "Username and Password exist");  
+                    TraineeForm A=new TraineeForm();
+                A.setVisible(true);
+                setVisible(false);
+                    
+                    
+                    }
+        }
             if(rs1.next()){
                 JOptionPane.showMessageDialog(null, "Admin");
                 Admin A=new Admin();
                 A.setVisible(true);
                 setVisible(false);
             }
-//            if(rs2.next()){
-//                JOptionPane.showMessageDialog(null, "Engineer");
-//                EngineerForm A=new EngineerForm();
-//                A.setVisible(true);
-//                setVisible(false);
-//            }
-//            if(rs3.next()){
-//                JOptionPane.showMessageDialog(null, "Trainee");
-//                TraineeForm A=new TraineeForm();
-//                A.setVisible(true);
-//                setVisible(false);
-//            }
-            else{
-                JOptionPane.showMessageDialog(null, "Username and password not Correct");
-                username.setText("");
-                password.setText("");
+            if(rs2.next()){
+                JOptionPane.showMessageDialog(null, "Engineer");
+                EngineerForm A=new EngineerForm();
+                A.showEngineer(username.getText(),password.getText());
+                A.setVisible(true);
+             
+                setVisible(false);
             }
+            if(rs3.next()){
+                JOptionPane.showMessageDialog(null, "Trainee");
+                TraineeForm A=new TraineeForm();
+                A.setVisible(true);
+                setVisible(false);
+            }
+//            else{
+//                JOptionPane.showMessageDialog(null, "Username and password not Correct");
+//                username.setText("");
+//                password.setText("");
+//            }
             con.close();
         }
         catch(Exception e){

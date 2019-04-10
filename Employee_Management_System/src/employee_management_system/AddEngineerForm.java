@@ -19,6 +19,9 @@ public class AddEngineerForm extends javax.swing.JFrame {
     /**
      * Creates new form AddEngineerForm
      */
+    String gender;
+    String role;
+    
     public AddEngineerForm() {
         initComponents();
     }
@@ -37,7 +40,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
         fname = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         lname = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        Gender = new javax.swing.JLabel();
         male = new javax.swing.JRadioButton();
         female = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
@@ -62,7 +65,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
 
         lname.setText(" ");
 
-        jLabel3.setText("Gender");
+        Gender.setText("Gender");
 
         buttonGroup1.add(male);
         male.setText("Male");
@@ -87,7 +90,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
 
         jLabel6.setText("Password");
 
-        jLabel7.setText("Working Hoours");
+        jLabel7.setText("Working Hours");
 
         jLabel8.setText("Position");
 
@@ -109,7 +112,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
+                    .addComponent(Gender)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
@@ -130,7 +133,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
                         .addComponent(password)
                         .addComponent(whours)
                         .addComponent(position, 0, 146, Short.MAX_VALUE)))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +149,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jLabel3))
+                        .addComponent(Gender))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -168,13 +171,13 @@ public class AddEngineerForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(whours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(position, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
@@ -194,7 +197,40 @@ public class AddEngineerForm extends javax.swing.JFrame {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url="jdbc:sqlserver://localhost:1433;databaseName=employee_system;integratedSecurity=true";
             Connection con = DriverManager.getConnection(url);
+            String fun="insert into engineer (fname,lname,gender,age,email,salary,password,workinghours,position) values(?,?,?,?,?,?,?,?,?)";
+            PreparedStatement pst=con.prepareStatement(fun);
+            pst.setString(1,fname.getText());
+            pst.setString(2,lname.getText());
+            if(male.isSelected())
+            {
+                gender="male";
+            }
+            if(female.isSelected())
+            {
+                gender="female";
+            }
+            pst.setString(3,gender);
+            pst.setInt(4,Integer.valueOf(age.getText()));
+            pst.setString(5,email.getText());
+            pst.setString(7,password.getText());
+            pst.setInt(8,Integer.valueOf(whours.getText()));
+            
+            role=position.getSelectedItem().toString();
+            pst.setString(9,role);
+            
+            
+          Engineer e=new Engineer(fname.getText(),lname.getText(),gender,email.getText(),Integer.valueOf(age.getText()),password.getText(),
+                Integer.valueOf(whours.getText()),role  );
+          Grade g=new Grade(role);
+          g.calculate_salary(role, Integer.valueOf(whours.getText()));
+          float ff=g.calculate_salary(role, Integer.valueOf(whours.getText()));
+          
+          pst.setFloat(6,ff);
+           pst.executeUpdate();
+           JOptionPane.showMessageDialog(null, "Added successfully");
         }
+        
+       
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
@@ -237,6 +273,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Gender;
     private javax.swing.JButton addbtn;
     private javax.swing.JTextField age;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -245,7 +282,6 @@ public class AddEngineerForm extends javax.swing.JFrame {
     private javax.swing.JTextField fname;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
