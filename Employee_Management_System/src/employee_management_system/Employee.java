@@ -9,7 +9,7 @@ package employee_management_system;
  *
  * @author nanon
  */
-public class Employee {
+public abstract class Employee {
   
     protected String FirstName;
     protected String SurName;
@@ -17,7 +17,7 @@ public class Employee {
     protected String Email;
     protected int Age;
     protected String Password;
-    protected float Salary;
+    protected double Salary;
   
 
     public Employee() {
@@ -32,72 +32,34 @@ public class Employee {
         this.Email = Email;
         this.Age = Age;
         this.Password=Password;
-       
+       this.Salary=Salary;
     }
 
     
    
-    public String getFirstName() {
-        return FirstName;
-    }
+    public abstract String getFirstName();
 
-    public String getSurName() {
-        return SurName;
-    }
+    public abstract String getSurName();
+    public abstract String getGender();
 
-    public String getGender() {
-        return Gender;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
+    public abstract String getEmail();
    
 
-    public int getAge() {
-        return Age;
-    }
+    public abstract int getAge();
+    public abstract String getPassword();
+    public abstract double getSalary();
+    public abstract void setFirstName(String FirstName) ;
 
-    public String getPassword() {
-        return Password;
-    }
+    public abstract void setSurName(String SurName);
+    public abstract void setGender(String Gender);
+    public abstract void setEmail(String Email);
 
-    public double getSalary() {
-        return Salary;
-    }
+    public abstract void setAge(int Age);
 
+    public abstract void setPassword(String Password) ;
     
 
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
-    }
-
-    public void setSurName(String SurName) {
-        this.SurName = SurName;
-    }
-
-    public void setGender(String Gender) {
-        this.Gender = Gender;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-   
-
-    public void setAge(int Age) {
-        this.Age = Age;
-    }
-
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
-
-    public void setSalary(float Salary) {
-        this.Salary = Salary;
-    }
+    public abstract void setSalary(float Salary) ;
 
   
 

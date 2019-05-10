@@ -5,6 +5,7 @@
  */
 package employee_management_system;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -21,7 +22,15 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        
         initComponents();
+        
+        
+       
+       
+       this .setExtendedState(MAXIMIZED_BOTH);
+        this.setSize(1920, 1080);
+        photo.setSize(1980, 1080);
     }
 
     /**
@@ -39,71 +48,70 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JTextField();
         login = new javax.swing.JButton();
         reset = new javax.swing.JButton();
+        photo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Imprint MT Shadow", 0, 95)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 0));
         jLabel1.setText("Username");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(490, 280, 450, 70);
 
+        jLabel2.setFont(new java.awt.Font("Imprint MT Shadow", 0, 95)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 0));
         jLabel2.setText("Password");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(500, 420, 470, 70);
 
+        username.setBackground(new java.awt.Color(204, 204, 204));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
+        getContentPane().add(username);
+        username.setBounds(1000, 310, 270, 22);
 
+        password.setBackground(new java.awt.Color(204, 204, 204));
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(password);
+        password.setBounds(1000, 440, 270, 22);
+
+        login.setBackground(new java.awt.Color(204, 204, 255));
+        login.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        login.setForeground(new java.awt.Color(0, 51, 51));
         login.setText("Login");
+        login.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 102, 255)));
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
             }
         });
+        getContentPane().add(login);
+        login.setBounds(1070, 590, 260, 60);
 
+        reset.setBackground(new java.awt.Color(204, 204, 255));
+        reset.setFont(new java.awt.Font("Imprint MT Shadow", 0, 48)); // NOI18N
+        reset.setForeground(new java.awt.Color(0, 51, 51));
         reset.setText("Reset");
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetActionPerformed(evt);
             }
         });
+        getContentPane().add(reset);
+        reset.setBounds(1070, 700, 260, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(188, 188, 188)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(reset)
-                        .addGap(117, 117, 117)
-                        .addComponent(login))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                            .addComponent(password))))
-                .addContainerGap(178, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(login)
-                    .addComponent(reset))
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
+        photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee_management_system/addpic/kok.jpeg"))); // NOI18N
+        photo.setText("jLabel3");
+        getContentPane().add(photo);
+        photo.setBounds(1, -4, 1240, 890);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,6 +121,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_usernameActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+       boolean found=false;
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url="jdbc:sqlserver://localhost:1433;databaseName=employee_system;integratedSecurity=true";
@@ -123,60 +132,25 @@ public class Login extends javax.swing.JFrame {
             pst1.setString(2, password.getText());
             ResultSet rs1 = pst1.executeQuery();
             
-            String sql2 = "Select * from engineer where email=? and password = ?";
-            PreparedStatement pst2 = con.prepareStatement(sql2);
-            pst2.setString(1, username.getText());
-            pst2.setString(2, password.getText());
-            ResultSet rs2 = pst2.executeQuery();
-            
-            
-          String sql3 = "Select * from trainee where email=? and password = ?";
-            PreparedStatement pst3 = con.prepareStatement(sql3);
-            pst3.setString(1, username.getText());
-            pst3.setString(2, password.getText());
-            ResultSet rs3 = pst3.executeQuery();
-            
-            while(  rs3.next()){
-            String user1=rs3.getString("email");
-        String password1=rs3.getString("password");
-                    if((user1.equals(username))&&(password1.equals(password))){
-                    JOptionPane.showMessageDialog(null, "Username and Password exist");  
-                    TraineeForm A=new TraineeForm();
-                A.setVisible(true);
-                setVisible(false);
-                    
-                    
-                    }
-        }
+           
             if(rs1.next()){
-                JOptionPane.showMessageDialog(null, "Admin");
+              //  JOptionPane.showMessageDialog(null, "Admin");
                 Admin A=new Admin();
                 A.setVisible(true);
                 setVisible(false);
+                found=true;
             }
-            if(rs2.next()){
-                JOptionPane.showMessageDialog(null, "Engineer");
-                EngineerForm A=new EngineerForm();
-                A.showEngineer(username.getText(),password.getText());
-                A.setVisible(true);
-             
-                setVisible(false);
+           
+            if(!found){
+                JOptionPane.showMessageDialog(null, "Username or password not Correct");
+                username.setText("");
+                password.setText("");
             }
-            if(rs3.next()){
-                JOptionPane.showMessageDialog(null, "Trainee");
-                TraineeForm A=new TraineeForm();
-                A.setVisible(true);
-                setVisible(false);
-            }
-//            else{
-//                JOptionPane.showMessageDialog(null, "Username and password not Correct");
-//                username.setText("");
-//                password.setText("");
-//            }
             con.close();
+            
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null,e);
         }
     }//GEN-LAST:event_loginActionPerformed
 
@@ -185,6 +159,10 @@ public class Login extends javax.swing.JFrame {
        username.setText("");
        password.setText("");
     }//GEN-LAST:event_resetActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,6 +204,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton login;
     private javax.swing.JTextField password;
+    private javax.swing.JLabel photo;
     private javax.swing.JButton reset;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

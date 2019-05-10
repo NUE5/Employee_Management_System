@@ -16,7 +16,18 @@ public class Employee_Management_System {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Login().setVisible(true);
+       new Start().setVisible(true);
+//        new Login().setVisible(true);
+//        new AddEngineerForm().setVisible(true);
+//       new EditEngineerForm().setVisible(true);
+//        new AddTraineeForm().setVisible(true);
+//        new EditTraineeForm().setVisible(true);
+//        new DeleteEngineerForm().setVisible(true);
+//       new DeleteTraineeForm().setVisible(true);
+//new ShowTraineeForm().setVisible(true);
+//new ShowEngineersForm().setVisible(true);
+// new Admin().setVisible(true);
+
     }
-    
+
 }

@@ -14,12 +14,12 @@ public class Trainee extends Employee{
     private String University;
     private int AcademicYear;
 
-    public Trainee(double GPA, String University, int AcademicYear, int ID, String FirstName, String SurName, String Gender, String Email, int Age,  String Password, String DOB) {
+    public Trainee(double GPA, String University, int AcademicYear,String FirstName, String SurName, String Gender, String Email, int Age,  String Password,double salary) {
         super( FirstName, SurName, Gender, Email, Age,  Password);
         this.GPA = GPA;
         this.University = University;
         this.AcademicYear = AcademicYear;
-        Salary=1000.0f;
+        salary=1000.0;
     }
 
     public double getGPA() {
@@ -47,8 +47,64 @@ public class Trainee extends Employee{
     }
 
     public double getSalary() {
-        return Salary;
+        return 1000.0;
     }
+
+    public String getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(String FirstName) {
+        this.FirstName = FirstName;
+    }
+
+    public String getSurName() {
+        return SurName;
+    }
+
+    public void setSurName(String SurName) {
+        this.SurName = SurName;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String Gender) {
+        this.Gender = Gender;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public int getAge() {
+        return Age;
+    }
+
+    public void setAge(int Age) {
+        this.Age = Age;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String Password) {
+        this.Password = Password;
+    }
+
+    @Override
+    public void setSalary(float Salary) {
+       this.Salary=Salary;
+    }
+
+
+   
 
   
     

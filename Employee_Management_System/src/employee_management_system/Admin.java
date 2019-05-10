@@ -16,6 +16,9 @@ public class Admin extends javax.swing.JFrame {
      */
     public Admin() {
         initComponents();
+        this .setExtendedState(MAXIMIZED_BOTH);
+        photo.setSize(1980, 1080);
+        this.setSize(1980, 1080);
     }
 
     /**
@@ -29,43 +32,124 @@ public class Admin extends javax.swing.JFrame {
 
         addemployee = new javax.swing.JButton();
         edit = new javax.swing.JButton();
+        deleteEngineer = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        addTrainee = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        photo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        addemployee.setText("Add Employee");
+        addemployee.setBackground(new java.awt.Color(204, 204, 255));
+        addemployee.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        addemployee.setForeground(new java.awt.Color(0, 51, 51));
+        addemployee.setText("Add Engineer");
+        addemployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addemployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addemployeeActionPerformed(evt);
             }
         });
+        getContentPane().add(addemployee);
+        addemployee.setBounds(470, 270, 360, 60);
 
-        edit.setText("Edit Employee");
+        edit.setBackground(new java.awt.Color(204, 204, 255));
+        edit.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        edit.setForeground(new java.awt.Color(0, 51, 51));
+        edit.setText("Edit Engineer");
         edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editActionPerformed(evt);
             }
         });
+        getContentPane().add(edit);
+        edit.setBounds(470, 590, 360, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(addemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addemployee, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
-                .addContainerGap(349, Short.MAX_VALUE))
-        );
+        deleteEngineer.setBackground(new java.awt.Color(204, 204, 255));
+        deleteEngineer.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        deleteEngineer.setForeground(new java.awt.Color(0, 51, 51));
+        deleteEngineer.setText("Delete Engineer");
+        deleteEngineer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteEngineerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(deleteEngineer);
+        deleteEngineer.setBounds(470, 430, 360, 60);
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 51));
+        jButton1.setText("Show Engineers");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(480, 750, 360, 60);
+
+        addTrainee.setBackground(new java.awt.Color(204, 204, 255));
+        addTrainee.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        addTrainee.setForeground(new java.awt.Color(0, 51, 51));
+        addTrainee.setText("Add Trainee");
+        addTrainee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTraineeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(addTrainee);
+        addTrainee.setBounds(1140, 270, 330, 60);
+
+        jButton2.setBackground(new java.awt.Color(204, 204, 255));
+        jButton2.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 51, 51));
+        jButton2.setText("Edit Trainee");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(1140, 590, 330, 60);
+
+        jButton3.setBackground(new java.awt.Color(204, 204, 255));
+        jButton3.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 51, 51));
+        jButton3.setText("Delete Trainee");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(1140, 430, 330, 60);
+
+        jButton4.setBackground(new java.awt.Color(204, 204, 255));
+        jButton4.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 51, 51));
+        jButton4.setText("Show Trainee");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton4);
+        jButton4.setBounds(1140, 750, 330, 60);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 204, 204));
+        jLabel1.setText("Designed by Code Makers 2019.");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(1180, 900, 240, 17);
+
+        photo.setIcon(new javax.swing.ImageIcon("C:\\Users\\nanon\\Desktop\\hi2.jpg")); // NOI18N
+        getContentPane().add(photo);
+        photo.setBounds(0, -30, 1460, 950);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -84,6 +168,49 @@ public class Admin extends javax.swing.JFrame {
         editengineer.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_editActionPerformed
+
+    private void deleteEngineerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteEngineerActionPerformed
+        // TODO add your handling code here:
+        DeleteEngineerForm delengineer=new DeleteEngineerForm();
+         delengineer.setVisible(true);
+         setVisible(false);
+    }//GEN-LAST:event_deleteEngineerActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         ShowEngineersForm showngineer=new ShowEngineersForm();
+         showngineer.setVisible(true);
+         setVisible(false);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void addTraineeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTraineeActionPerformed
+        // TODO add your handling code here:
+         AddTraineeForm showngineer=new AddTraineeForm();
+         showngineer.setVisible(true);
+         setVisible(false);
+    }//GEN-LAST:event_addTraineeActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        EditTraineeForm showngineer=new EditTraineeForm();
+         showngineer.setVisible(true);
+         setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         DeleteTraineeForm showngineer=new DeleteTraineeForm();
+         showngineer.setVisible(true);
+         setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        ShowTraineeForm showTrainee=new ShowTraineeForm();
+         showTrainee.setVisible(true);
+         setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -121,7 +248,15 @@ public class Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addTrainee;
     private javax.swing.JButton addemployee;
+    private javax.swing.JButton deleteEngineer;
     private javax.swing.JButton edit;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel photo;
     // End of variables declaration//GEN-END:variables
 }

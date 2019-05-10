@@ -24,6 +24,9 @@ public class AddEngineerForm extends javax.swing.JFrame {
     
     public AddEngineerForm() {
         initComponents();
+        this .setExtendedState(MAXIMIZED_BOTH);
+        photo.setSize(1980, 1080);
+        this.setSize(1980, 1080);
     }
 
     /**
@@ -54,18 +57,40 @@ public class AddEngineerForm extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         position = new javax.swing.JComboBox<>();
         addbtn = new javax.swing.JButton();
+        photo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("First name");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(520, 180, 490, 60);
 
+        fname.setBackground(new java.awt.Color(204, 204, 255));
+        fname.setForeground(new java.awt.Color(0, 0, 51));
         fname.setText(" ");
+        getContentPane().add(fname);
+        fname.setBounds(1040, 200, 370, 22);
 
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 204));
         jLabel2.setText("Sur name");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(530, 250, 470, 60);
 
+        lname.setBackground(new java.awt.Color(204, 204, 255));
+        lname.setForeground(new java.awt.Color(0, 0, 51));
         lname.setText(" ");
+        getContentPane().add(lname);
+        lname.setBounds(1040, 270, 370, 22);
 
+        Gender.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        Gender.setForeground(new java.awt.Color(255, 255, 204));
         Gender.setText("Gender");
+        getContentPane().add(Gender);
+        Gender.setBounds(530, 320, 250, 60);
 
         buttonGroup1.add(male);
         male.setText("Male");
@@ -74,111 +99,90 @@ public class AddEngineerForm extends javax.swing.JFrame {
                 maleActionPerformed(evt);
             }
         });
+        getContentPane().add(male);
+        male.setBounds(1050, 330, 55, 25);
 
         buttonGroup1.add(female);
         female.setText("Female");
+        getContentPane().add(female);
+        female.setBounds(1140, 330, 71, 25);
 
+        jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 204));
         jLabel4.setText("Age");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(540, 370, 150, 90);
 
+        age.setBackground(new java.awt.Color(204, 204, 255));
+        age.setForeground(new java.awt.Color(51, 0, 51));
         age.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageActionPerformed(evt);
             }
         });
+        getContentPane().add(age);
+        age.setBounds(1050, 410, 370, 22);
 
+        jLabel5.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 204));
         jLabel5.setText("Email");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(540, 450, 190, 70);
 
+        email.setBackground(new java.awt.Color(204, 204, 255));
+        email.setForeground(new java.awt.Color(0, 0, 51));
+        getContentPane().add(email);
+        email.setBounds(1050, 470, 370, 22);
+
+        jLabel6.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 204));
         jLabel6.setText("Password");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(540, 530, 360, 60);
 
+        password.setBackground(new java.awt.Color(204, 204, 255));
+        password.setForeground(new java.awt.Color(0, 0, 51));
+        getContentPane().add(password);
+        password.setBounds(1050, 540, 370, 22);
+
+        jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 204));
         jLabel7.setText("Working Hours");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(530, 590, 450, 80);
 
+        whours.setBackground(new java.awt.Color(204, 204, 255));
+        whours.setForeground(new java.awt.Color(0, 0, 51));
+        getContentPane().add(whours);
+        whours.setBounds(1050, 620, 370, 22);
+
+        jLabel8.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 70)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 204));
         jLabel8.setText("Position");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(540, 680, 310, 60);
 
+        position.setFont(new java.awt.Font("Imprint MT Shadow", 0, 24)); // NOI18N
+        position.setForeground(new java.awt.Color(102, 102, 0));
         position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Team Leader", "Software Engineer", "Software Developer", "Web Developer", "Tester", "Security Engineer", " ", " " }));
+        getContentPane().add(position);
+        position.setBounds(1070, 700, 146, 30);
 
-        addbtn.setText("ADD");
+        addbtn.setBackground(new java.awt.Color(204, 204, 204));
+        addbtn.setFont(new java.awt.Font("Imprint MT Shadow", 0, 36)); // NOI18N
+        addbtn.setForeground(new java.awt.Color(102, 102, 0));
+        addbtn.setText("ADD Engineer");
         addbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addbtnActionPerformed(evt);
             }
         });
+        getContentPane().add(addbtn);
+        addbtn.setBounds(1210, 750, 320, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(Gender)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(male)
-                            .addGap(18, 18, 18)
-                            .addComponent(female))
-                        .addComponent(fname)
-                        .addComponent(lname)
-                        .addComponent(age)
-                        .addComponent(email)
-                        .addComponent(password)
-                        .addComponent(whours)
-                        .addComponent(position, 0, 146, Short.MAX_VALUE)))
-                .addContainerGap(124, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(Gender))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(male)
-                            .addComponent(female))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(whours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(position, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(54, 54, 54)
-                .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
-        );
+        photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee_management_system/addpic/mini.jpg"))); // NOI18N
+        getContentPane().add(photo);
+        photo.setBounds(1, -14, 1210, 800);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -217,17 +221,21 @@ public class AddEngineerForm extends javax.swing.JFrame {
             
             role=position.getSelectedItem().toString();
             pst.setString(9,role);
-            
-            
-          Engineer e=new Engineer(fname.getText(),lname.getText(),gender,email.getText(),Integer.valueOf(age.getText()),password.getText(),
-                Integer.valueOf(whours.getText()),role  );
-          Grade g=new Grade(role);
-          g.calculate_salary(role, Integer.valueOf(whours.getText()));
+             Grade g=new Grade(role);
+              double d=g.calculate_salary(role, Integer.valueOf(whours.getText()));
+          
+          Employee e=new Engineer(fname.getText(),lname.getText(),gender,email.getText(),Integer.valueOf(age.getText()),password.getText(),
+                Integer.valueOf(whours.getText()),role,d  );
+         // Grade g=new Grade(role);
+         // g.calculate_salary(role, Integer.valueOf(whours.getText()));
           float ff=g.calculate_salary(role, Integer.valueOf(whours.getText()));
           
           pst.setFloat(6,ff);
            pst.executeUpdate();
            JOptionPane.showMessageDialog(null, "Added successfully");
+            new Admin().setVisible(true);
+            this.setVisible(false);
+            
         }
         
        
@@ -290,6 +298,7 @@ public class AddEngineerForm extends javax.swing.JFrame {
     private javax.swing.JTextField lname;
     private javax.swing.JRadioButton male;
     private javax.swing.JTextField password;
+    private javax.swing.JLabel photo;
     private javax.swing.JComboBox<String> position;
     private javax.swing.JTextField whours;
     // End of variables declaration//GEN-END:variables

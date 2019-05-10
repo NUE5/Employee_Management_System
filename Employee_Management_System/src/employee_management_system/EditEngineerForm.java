@@ -20,6 +20,9 @@ public class EditEngineerForm extends javax.swing.JFrame {
      */
     public EditEngineerForm() {
         initComponents();
+        this .setExtendedState(MAXIMIZED_BOTH);
+        photo.setSize(1980, 1080);
+        this.setSize(1980, 1080);
     }
 
     /**
@@ -34,50 +37,159 @@ public class EditEngineerForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
         search = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        fname = new javax.swing.JTextField();
+        password = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lname = new javax.swing.JTextField();
+        whours = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        position = new javax.swing.JComboBox<>();
+        update = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        age = new javax.swing.JTextField();
+        photo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        jLabel1.setText("Enter Engineer ID");
+        jLabel1.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel1.setText("Engineer ID");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(930, 50, 710, 80);
 
+        id.setBackground(new java.awt.Color(204, 204, 255));
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        getContentPane().add(id);
+        id.setBounds(1620, 90, 240, 22);
+
+        search.setBackground(new java.awt.Color(204, 204, 255));
+        search.setFont(new java.awt.Font("Ink Free", 1, 36)); // NOI18N
+        search.setForeground(new java.awt.Color(0, 51, 51));
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchActionPerformed(evt);
             }
         });
+        getContentPane().add(search);
+        search.setBounds(940, 900, 210, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(search)))
-                .addContainerGap(267, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(search)
-                .addContainerGap(340, Short.MAX_VALUE))
-        );
+        jLabel5.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel5.setText("Email");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(960, 390, 550, 70);
+
+        email.setBackground(new java.awt.Color(204, 204, 255));
+        getContentPane().add(email);
+        email.setBounds(1620, 420, 240, 22);
+
+        jLabel2.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel2.setText("First name");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(950, 150, 680, 70);
+
+        jLabel6.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel6.setText("Password");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(960, 480, 660, 70);
+
+        fname.setBackground(new java.awt.Color(204, 204, 255));
+        fname.setText(" ");
+        getContentPane().add(fname);
+        fname.setBounds(1620, 180, 240, 22);
+
+        password.setBackground(new java.awt.Color(204, 204, 255));
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(password);
+        password.setBounds(1620, 500, 240, 22);
+
+        jLabel3.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel3.setText("Sur name");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(950, 230, 660, 70);
+
+        jLabel7.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel7.setText("Working Hours");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(970, 580, 690, 70);
+
+        lname.setBackground(new java.awt.Color(204, 204, 255));
+        lname.setText(" ");
+        getContentPane().add(lname);
+        lname.setBounds(1620, 260, 240, 22);
+
+        whours.setBackground(new java.awt.Color(204, 204, 255));
+        getContentPane().add(whours);
+        whours.setBounds(1620, 600, 240, 22);
+
+        jLabel8.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel8.setText("Position");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(980, 670, 650, 80);
+
+        position.setBackground(new java.awt.Color(204, 204, 255));
+        position.setFont(new java.awt.Font("PMingLiU-ExtB", 0, 24)); // NOI18N
+        position.setForeground(new java.awt.Color(0, 51, 102));
+        position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Manager", "Team Leader", "Software Engineer", "Software Developer", "Web Developer", "Tester", "Security Engineer", " ", " " }));
+        getContentPane().add(position);
+        position.setBounds(1610, 690, 190, 40);
+
+        update.setBackground(new java.awt.Color(204, 204, 255));
+        update.setFont(new java.awt.Font("Ink Free", 1, 36)); // NOI18N
+        update.setForeground(new java.awt.Color(0, 51, 51));
+        update.setText("Update");
+        update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateActionPerformed(evt);
+            }
+        });
+        getContentPane().add(update);
+        update.setBounds(1250, 900, 220, 50);
+
+        jLabel4.setFont(new java.awt.Font("Kristen ITC", 1, 80)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel4.setText("Age");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(950, 310, 550, 80);
+
+        age.setBackground(new java.awt.Color(204, 204, 255));
+        age.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(age);
+        age.setBounds(1620, 340, 240, 22);
+
+        photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/employee_management_system/addpic/anaa.jpg"))); // NOI18N
+        getContentPane().add(photo);
+        photo.setBounds(-10, 80, 1920, 1150);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+       boolean found=false;
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String url="jdbc:sqlserver://localhost:1433;databaseName=employee_system;integratedSecurity=true";
@@ -86,10 +198,23 @@ public class EditEngineerForm extends javax.swing.JFrame {
             String query="Select * FROM engineer WhERE ID="+i;
             PreparedStatement pst=con.prepareStatement(query);
             ResultSet rs = pst.executeQuery();
-            if(rs.next())
+           
+             while(rs.next())
             {
-                JOptionPane.showMessageDialog(null,"found");
+                fname.setText(rs.getString("fname"));
+                lname.setText(rs.getString("lname"));
+                age.setText(rs.getString("Age"));
+                email.setText(rs.getString("email"));
+                password.setText(rs.getString("password"));
+                whours.setText(rs.getString("workinghours"));
+                position.setSelectedItem(rs.getString("position"));
+                found=true;
             }
+              if(!found)
+           {
+               JOptionPane.showMessageDialog(null, "ID NOT FOUND!");
+           }
+
             
         }
           catch(Exception e)
@@ -97,6 +222,56 @@ public class EditEngineerForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_searchActionPerformed
+
+    private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
+
+      try{
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String url="jdbc:sqlserver://localhost:1433;databaseName=employee_system;integratedSecurity=true";
+            Connection con = DriverManager.getConnection(url);
+            int i=Integer.valueOf(id.getText());
+            String fun="update engineer SET fname=?,lname=?,age=?,email=?,password=?,workinghours=?,position=?,salary=? where ID="+i ;
+            PreparedStatement pst=con.prepareStatement(fun);
+            pst.setString(1,fname.getText());
+            pst.setString(2,lname.getText());
+           
+            pst.setInt(3,Integer.valueOf(age.getText()));
+            pst.setString(4,email.getText());
+            pst.setString(5,password.getText());
+            pst.setInt(6,Integer.valueOf(whours.getText()));
+     
+            pst.setString(7,position.getSelectedItem().toString());
+            
+           
+          Grade g=new Grade(position.getSelectedItem().toString());
+          g.calculate_salary(position.getSelectedItem().toString(), Integer.valueOf(whours.getText()));
+          float ff=g.calculate_salary(position.getSelectedItem().toString(), Integer.valueOf(whours.getText()));
+          
+           pst.setFloat(8,ff);
+           pst.executeUpdate();
+           JOptionPane.showMessageDialog(null, "Updated successfully");
+           new Admin().setVisible(true);
+            this.setVisible(false);
+        }
+        
+       
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_updateActionPerformed
+
+    private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,8 +309,24 @@ public class EditEngineerForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField age;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField fname;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField lname;
+    private javax.swing.JTextField password;
+    private javax.swing.JLabel photo;
+    private javax.swing.JComboBox<String> position;
     private javax.swing.JButton search;
+    private javax.swing.JButton update;
+    private javax.swing.JTextField whours;
     // End of variables declaration//GEN-END:variables
 }
